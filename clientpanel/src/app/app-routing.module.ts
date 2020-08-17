@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './compoments/dashboard/dashboard.component';
-import { LoginComponent } from './compoments/login/login.component';
-import { RegisterComponent } from './compoments/register/register.component';
-import { AddClientComponent } from './compoments/add-client/add-client.component';
-import { EditClientComponent } from './compoments/edit-client/edit-client.component';
-import { ClientDetailsComponent } from './compoments/client-details/client-details.component';
-import { SettingsComponent } from './compoments/settings/settings.component';
-import { NotFoundComponent } from './compoments/not-found/not-found.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AddClientComponent } from './components/add-client/add-client.component';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
