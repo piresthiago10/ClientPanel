@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { ClientService } from '../../services/client.service';
+import { Router } from '@angular/router';
+
+import { Client } from '../../models/Client';
 
 @Component({
   selector: 'app-add-client',
@@ -6,10 +11,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-client.component.css']
 })
 export class AddClientComponent implements OnInit {
+  client: Client = {
+    firstName: '',
+    lastName: "",
+    email: '',
+    phone: '',
+    balance: 0
+  }
 
-  constructor() { }
+  disableBalanceOnAdd: boolean = true;
+  // @ViewChild('clientForm') form: any;
+
+  constructor(
+    private flashMessage:FlashMessagesService,
+    private clientService: ClientService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+  }
+
+  onSubmit({value, valid}: {value: Client, valid: boolean}){
+    
+    if(this.disableBalanceOnAdd){
+      value.balance = 0;
+    }
+
+    if(!valid){
+      // Exibe erro
+      this.flashMessage.show('Por favor, preencha o formulário corretamente.', {
+        cssClass: 'alert-danger', timeout: 4000});
+    } else {
+
+      // Adiciona novo cliente
+      this.clientService.newClient(value);
+
+      // Exibe mensagem
+      this.flashMessage.show('Cliente adicionado.', {
+        cssClass: 'alert-success', timeout: 4000});
+
+      // Redireciona para Dashboard
+      this.router.navigate(['/']);
+    }
   }
 
 }
