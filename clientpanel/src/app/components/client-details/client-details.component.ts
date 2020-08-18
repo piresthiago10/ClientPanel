@@ -46,4 +46,15 @@ export class ClientDetailsComponent implements OnInit {
     });
   }
 
+  onDeleteClick(){
+    if(confirm('Deseja realmente excluir? ')){
+      this.clientservice.deleteClient(this.client);
+      this.flashMessage.show('Cliente excluído!', {
+        cssClass: 'alert-success', timeout:4000
+      });
+      this.router.navigate(['/']);
+    }
+
+  }
+
 }
