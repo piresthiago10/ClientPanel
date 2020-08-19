@@ -23,6 +23,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { from } from 'rxjs';
 import { ClientsComponent } from './components/clients/clients.component';
+import { AuthService } from './services/auth.service';
+import { ClientService } from './services/client.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import { ClientsComponent } from './components/clients/clients.component';
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [],
+  providers: [ClientService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
