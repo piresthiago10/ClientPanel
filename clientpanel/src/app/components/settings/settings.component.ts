@@ -22,7 +22,7 @@ export class SettingsComponent implements OnInit {
     this.settings = this.settingsService.getSettings();
   }
 
-  osSubmit() {
+  onSubmit() {
     this.settingsService.changeSettings(this.settings);
     this.flashMessage.show('Configurações alteradas com sucesso!', {
       cssClass: 'alert-success', timeout: 4000
