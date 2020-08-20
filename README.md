@@ -39,6 +39,7 @@ http://localhost:4200/
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=CHBD&gclid=Cj0KCQjwn_LrBRD4ARIsAFEQFKt3kLTIsdU6a-sk3FKsxrhplkKaYNHo6Pt3aRbaEAJ3TK4fZslZmtUaAvHVEALw_wcB&gclsrc=aw)
+* [Firebase](https://firebase.google.com/)
 
 ## Agradecimento
 
