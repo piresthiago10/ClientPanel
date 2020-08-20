@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="com-md-6">
+        <a routerLink="/" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i>Voltar para o Dashboard</a>
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Editar Configurações
+    </div>
+    <div class="card-body">
+        <form (submit)="onSubmit()">
+            <div class="form-group">
+                <input type="checkbox" name="allowRegistration"
+                [checked]="settings.allowRegistration"
+                (change)="settings.allowRegistration = !settings.allowRegistration">
+                <label> Permitir Cadastro </label>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" name="disableBalanceOnAdd"
+                [checked]="settings.disableBalanceOnAdd"
+                (change)="settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd">
+                <label> Desabilitar adição de Renda no cadastro </label>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" name="disableBalanceOnEdit"
+                [checked]="settings.disableBalanceOnEdit"
+                (change)="settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit">
+                <label> Desabilitar adição de Renda na edição cadastro </label>
+            </div>
+
+            <input type="submit" value="Enviar" class="btn btn-primary btn-block">
+        </form>
+    </div>
+</div>
